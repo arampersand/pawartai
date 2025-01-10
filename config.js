@@ -2,12 +2,12 @@ import themes from "daisyui/src/theming/themes";
 
 const config = {
   // REQUIRED
-  appName: "ShipeaRapido",
+  appName: "PawArtAI",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
-    "The NextJS boilerplate with all you need to build your SaaS, AI tool, or any other web app.",
+    "Descubre la magia de transformar a tus mascotas en aventureros exploradores con nuestra aplicación de generación de imágenes. Desde las majestuosas 7 maravillas del mundo hasta la diversión de Disneyworld, la serenidad de la playa o la inmensidad del espacio como astronautas, nuestra IA crea imágenes asombrosas que capturan a tus mascotas en escenarios extraordinarios.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
-  domainName: "shipfa.st",
+  domainName: "pawartai.com",
   crisp: {
     // Crisp website ID. IF YOU DON'T USE CRISP: just remove this => Then add a support email in this config file (mailgun.supportEmail) otherwise customer support won't work.
     id: "",
@@ -74,20 +74,20 @@ const config = {
     // subdomain to use when sending emails, if you don't have a subdomain, just remove it. Highly recommended to have one (i.e. mg.yourdomain.com or mail.yourdomain.com)
     subdomain: "",
     // REQUIRED — Email 'From' field to be used when sending magic login links
-    fromNoReply: `ShipeaRapido <noreply@magiobus.com>`,
+    fromNoReply: `pawartai <noreply@casadepaw.com>`,
     // REQUIRED — Email 'From' field to be used when sending other emails, like abandoned carts, updates etc..
-    fromAdmin: `Magio at shipearapido <magio@magiobus.com>`,
+    fromAdmin: `ampersand at pawartai <help@casadepaw.com>`,
     // Email shown to customer if need support. Leave empty if not needed => if empty, set up Crisp above, otherwise you won't be able to offer customer support."
-    supportEmail: "magio@magiobus.com",
+    supportEmail: "help@casadepaw.com",
     // When someone replies to supportEmail sent by the app, forward it to the email below (otherwise it's lost). If you set supportEmail to empty, this will be ignored.
-    forwardRepliesTo: "magio@magiobus.com",
+    forwardRepliesTo: "help@casadepaw.com",
   },
   colors: {
     // REQUIRED — The DaisyUI theme to use (added to the main layout.js). Leave blank for default (light & dark mode). If you any other theme than light/dark, you need to add it in config.tailwind.js in daisyui.themes.
-    theme: "light",
+    theme: "black",
     // REQUIRED — This color will be reflected on the whole app outside of the document (loading bar, Chrome tabs, etc..). By default it takes the primary color from your DaisyUI theme (make sure to update your the theme name after "data-theme=")
     // OR you can just do this to use a custom color: main: "#f37055". HEX only.
-    main: themes["light"]["primary"],
+    main: themes["black"]["primary"],
   },
   auth: {
     // REQUIRED — the path to log in users. It's use to protect private routes (like /dashboard). It's used in apiClient (/libs/api.js) upon 401 errors from our API

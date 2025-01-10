@@ -12,7 +12,7 @@ const Pricing = () => {
         <div className="flex flex-col text-center w-full mb-20">
           <p className="font-medium text-primary mb-8">Pricing</p>
           <h2 className="font-bold text-3xl lg:text-5xl tracking-tight">
-            Save hours of repetitive code and ship faster!
+            Transform Your Pets into Adventurous Explorers with Our AI
           </h2>
         </div>
 
@@ -38,10 +38,12 @@ const Pricing = () => {
               <div className="relative flex flex-col h-full gap-5 lg:gap-8 z-10 bg-base-100 p-8 rounded-lg">
                 <div className="flex justify-between items-center gap-4">
                   <div>
-                    <p className="text-lg lg:text-xl font-bold">{plan.name}</p>
+                    <p className="text-lg lg:text-xl font-bold">
+                      {plan.name === "Basic" ? "Explorer Starter" : plan.name === "Pro" ? "Adventurer Pro" : "Voyager Elite"}
+                    </p>
                     {plan.description && (
                       <p className="text-base-content/80 mt-2">
-                        {plan.description}
+                        {plan.name === "Basic" ? "Capture your pet's first steps into the world of adventure." : plan.name === "Pro" ? "Unlock more destinations and adventures for your pet." : "Experience the ultimate journey with unlimited possibilities."}
                       </p>
                     )}
                   </div>

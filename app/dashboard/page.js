@@ -1,6 +1,6 @@
-import Playground from "@/components/Playground"
+import ImageGenerator from "@/components/image-generator"
 
 export default function Page() {
-  return <Playground />
+  return <ImageGenerator />
 }
 

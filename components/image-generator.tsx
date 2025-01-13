@@ -7,53 +7,54 @@ import { Input } from "@/components/ui/input"
 import Image from "next/image"
 import { cn } from "@/lib/utils"
 
+
 const MODEL_PRESETS = [
   {
     id: 'anime',
     name: 'Anime Style',
-    preview: '/placeholder.svg?height=100&width=100',
+    preview: '/img/paw1.jpeg?height=full&width=full',
     description: 'Transform your pet into anime character'
   },
   {
     id: 'pixel',
     name: 'Pixel Art',
-    preview: '/placeholder.svg?height=100&width=100',
+    preview: '/img/paw2.jpeg?height=full&width=full',
     description: 'Create pixel art version of your pet'
   },
   {
     id: 'watercolor',
     name: 'Watercolor',
-    preview: '/placeholder.svg?height=100&width=100',
+    preview: '/img/paw3.jpeg?height=full&width=full',
     description: 'Artistic watercolor painting style'
   },
   {
     id: 'pop-art',
     name: 'Pop Art',
-    preview: '/placeholder.svg?height=100&width=100',
+    preview: '/img/paw4.jpeg?height=full&width=full',
     description: 'Pop art inspired transformation'
   },
   {
     id: 'realistic',
     name: 'Realistic',
-    preview: '/placeholder.svg?height=100&width=100',
+    preview: '/img/paw5.jpeg?height=full&width=full',
     description: 'Photorealistic art style'
   },
   {
     id: '3d',
     name: '3D Model',
-    preview: '/placeholder.svg?height=100&width=100',
+    preview: '/img/paw6.jpeg?height=full&width=full',
     description: '3D rendered version of your pet'
   },
   {
     id: 'cartoon',
     name: 'Cartoon',
-    preview: '/placeholder.svg?height=100&width=100',
+    preview: '/img/paw7.jpeg?height=full&width=full',
     description: 'Cute cartoon style transformation'
   },
   {
     id: 'comic',
     name: 'Comic',
-    preview: '/placeholder.svg?height=100&width=100',
+    preview: '/img/paw8.jpeg?height=full&width=full',
     description: 'Comic book art style'
   }
 ]
@@ -61,22 +62,22 @@ const MODEL_PRESETS = [
 const PREVIEW_PLACEHOLDERS = [
   {
     id: 1,
-    src: '/placeholder.svg?height=200&width=200',
+    src: '/img/paw9.jpeg?height=full&width=full',
     alt: 'Style 1'
   },
   {
     id: 2,
-    src: '/placeholder.svg?height=200&width=200',
+    src: '/img/paw10.jpeg?height=full&width=full',
     alt: 'Style 2'
   },
   {
     id: 3,
-    src: '/placeholder.svg?height=200&width=200',
+    src: '/img/paw11.jpeg?height=full&width=full',
     alt: 'Style 3'
   },
   {
     id: 4,
-    src: '/placeholder.svg?height=200&width=200',
+    src: '/img/paw12.jpeg?height=full&width=full',
     alt: 'Style 4'
   }
 ]
@@ -116,7 +117,7 @@ export default function ImageGenerator({ className }: ImageGeneratorProps) {
     try {
       // Simulate API call to Replicate
       await new Promise(resolve => setTimeout(resolve, 2000))
-      
+
       setGeneratedImages([
         "/placeholder.svg?height=400&width=400",
         "/placeholder.svg?height=400&width=400",

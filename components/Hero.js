@@ -110,11 +110,6 @@ const Hero = () => {
         </p>
 
         <div className="flex flex-col items-center gap-4 mb-12 sm:flex-row sm:gap-6">
-          <Input
-            type="email"
-            placeholder="Enter your email to start the adventure..."
-            className="max-w-md bg-white/10 border-white/20 text-white placeholder:text-gray-400 rounded-xl"
-          />
           <Button
             size="lg"
             className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-xl"
@@ -144,18 +139,18 @@ const Hero = () => {
 
         {/* Example Photos Grid */}
         <div className="grid gap-4 mt-20 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {[...Array(8)].map((_, i) => (
+          {getRandomImages(8).map((imageSrc, i) => (
             <div key={i} className="relative aspect-square group overflow-hidden rounded-2xl">
               <Image
-                src={`/img/paw3.jpeg?height=400&width=400`}
+                src={imageSrc}
                 alt={`Pet adventure example ${i + 1}`}
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
                 fill
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="absolute bottom-4 left-4 text-white">
-                  <p className="text-sm font-medium">Fluffy at the Pyramids</p>
-                  <p className="text-xs opacity-75">Generated with PetAI</p>
+                  <p className="text-sm font-medium">Adventure Pet</p>
+                  <p className="text-xs opacity-75">Generated with PawArtAI</p>
                 </div>
               </div>
             </div>

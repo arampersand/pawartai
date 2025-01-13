@@ -5,7 +5,7 @@ const config = {
   appName: "PawArtAI",
   // REQUIRED: a short description of your app for SEO tags (can be overwritten)
   appDescription:
-    "Descubre la magia de transformar a tus mascotas en aventureros exploradores con nuestra aplicación de generación de imágenes. Desde las majestuosas 7 maravillas del mundo hasta la diversión de Disneyworld, la serenidad de la playa o la inmensidad del espacio como astronautas, nuestra IA crea imágenes asombrosas que capturan a tus mascotas en escenarios extraordinarios.",
+    "Discover the magic of transforming your pets into adventurous explorers with our image generation application. From the majestic 7 Wonders of the World to the fun of Disneyworld, the serenity of the beach, or the vastness of space as astronauts, our AI creates amazing images that capture your pets in extraordinary scenarios.",
   // REQUIRED (no https://, not trialing slash at the end, just the naked domain)
   domainName: "pawartai.com",
   crisp: {

@@ -3,6 +3,9 @@
 import { useState } from "react";
 import apiClient from "@/libs/api";
 import config from "@/config";
+const baseUrl = process.env.NEXT_PUBLIC_NEXTAUTH_URL;
+const successUrl = `${baseUrl}/dashboard`;
+const cancelUrl = `${baseUrl}/#pricing`;
 
 // This component is used to create Stripe Checkout Sessions
 // It calls the /api/stripe/create-checkout route with the priceId, successUrl and cancelUrl
@@ -18,8 +21,8 @@ const ButtonCheckout = ({ priceId, mode = "payment" }) => {
       const res = await apiClient.post("/stripe/create-checkout", {
         priceId,
         mode,
-        successUrl: window.location.href,
-        cancelUrl: window.location.href,
+        successUrl,
+        cancelUrl,
       });
 
       window.location.href = res.url;

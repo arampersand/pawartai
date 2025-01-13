@@ -38,12 +38,10 @@ const Pricing = () => {
               <div className="relative flex flex-col h-full gap-5 lg:gap-8 z-10 bg-base-100 p-8 rounded-lg">
                 <div className="flex justify-between items-center gap-4">
                   <div>
-                    <p className="text-lg lg:text-xl font-bold">
-                      {plan.name === "Basic" ? "Explorer Starter" : plan.name === "Pro" ? "Adventurer Pro" : "Voyager Elite"}
-                    </p>
+                    <p className="text-lg lg:text-xl font-bold">{plan.name}</p>
                     {plan.description && (
                       <p className="text-base-content/80 mt-2">
-                        {plan.name === "Basic" ? "Capture your pet's first steps into the world of adventure." : plan.name === "Pro" ? "Unlock more destinations and adventures for your pet." : "Experience the ultimate journey with unlimited possibilities."}
+                        {plan.description}
                       </p>
                     )}
                   </div>
@@ -94,7 +92,7 @@ const Pricing = () => {
                   <ButtonCheckout priceId={plan.priceId} />
 
                   <p className="flex items-center justify-center gap-2 text-sm text-center text-base-content/80 font-medium relative">
-                    Pay once. Access forever.
+                    Create lifelong memories with each purchase. Buy credits as needed.
                   </p>
                 </div>
               </div>

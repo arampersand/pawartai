@@ -7,7 +7,34 @@ import { Camera, Globe, Sparkles, Upload } from 'lucide-react';
 import Image from "next/image";
 import TestimonialsAvatars from "./TestimonialsAvatars";
 import config from "@/config";
-import imgbackground from "@/public/img/gandalf.jpeg";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
+
+// Array de imágenes disponibles
+const backgroundImages = [
+  '/img/paw1.jpeg',
+  '/img/paw2.jpeg',
+  '/img/paw3.jpeg',
+  '/img/paw4.jpeg',
+  '/img/paw5.jpeg',
+  '/img/paw6.jpeg',
+  '/img/gandalf.jpeg'
+];
+
+// Función para obtener un array de imágenes aleatorias sin repetición
+const getRandomImages = (count) => {
+  // Asegurarse de que no pedimos más imágenes de las que hay
+  const maxImages = Math.min(count, backgroundImages.length);
+  const shuffled = [...backgroundImages].sort(() => 0.5 - Math.random());
+
+  // Si necesitamos más imágenes que las disponibles, repetimos el array
+  let result = [];
+  while (result.length < count) {
+    result = [...result, ...shuffled];
+  }
+
+  return result.slice(0, count);
+};
 
 // Define el componente FeatureCard antes de usarlo
 function FeatureCard({
@@ -27,19 +54,36 @@ function FeatureCard({
 }
 
 const Hero = () => {
+  const { data: session } = useSession();
+  const router = useRouter();
+  const randomImages = getRandomImages(128);
+
+  const handleCreateClick = () => {
+    if (!session) {
+      router.push('/api/auth/signin');
+    } else {
+      router.push('/dashboard');
+    }
+  };
+
   return (
     <div className="relative overflow-hidden bg-black">
       {/* Background grid of pet images */}
       <div className="absolute inset-0 opacity-20 overflow-hidden -skew-y-6">
-        <div className="grid grid-cols-4 gap-1 w-full h-[200%] transform -translate-y-1/4">
-          {[...Array(128)].map((_, i) => (
-            <div key={i} className="relative aspect-square">
-              <Image
-                src={`/img/gandalf.jpeg?height=150&width=150`}
-                alt="Pet photo example"
-                className="object-cover rounded-lg"
-                fill
-              />
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(160px,1fr))] gap-2  p-2 w-full  transform -translate-y-1/4">
+          {randomImages.map((imageSrc, i) => (
+            <div key={i} className="relative aspect-square overflow-hidden rounded-lg p-2">
+              <div className="relative w-full h-full rounded-lg overflow-hidden">
+                <Image
+                  src={imageSrc}
+                  alt={`Pet photo example ${i + 1}`}
+                  className="object-cover w-full h-full rounded-lg"
+                  width={280}
+                  height={280}
+                  priority={i < 8}
+                  loading={i < 8 ? "eager" : "lazy"}
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -71,8 +115,12 @@ const Hero = () => {
             placeholder="Enter your email to start the adventure..."
             className="max-w-md bg-white/10 border-white/20 text-white placeholder:text-gray-400 rounded-xl"
           />
-          <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-xl">
-            Start Creating Now
+          <Button
+            size="lg"
+            className="w-full sm:w-auto bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 rounded-xl"
+            onClick={handleCreateClick}
+          >
+            {session ? "Start Creating Now" : "Sign in to Create"}
           </Button>
         </div>
 
@@ -99,7 +147,7 @@ const Hero = () => {
           {[...Array(8)].map((_, i) => (
             <div key={i} className="relative aspect-square group overflow-hidden rounded-2xl">
               <Image
-                src={`/img/gandalf.jpeg?height=400&width=400`}
+                src={`/img/paw3.jpeg?height=400&width=400`}
                 alt={`Pet adventure example ${i + 1}`}
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
                 fill

@@ -21,23 +21,22 @@ const config = {
         // REQUIRED — we use this to find the plan in the webhook (for instance if you want to update the user's credits based on the plan)
         priceId:
           process.env.NODE_ENV === "development"
-            ? "price_1Niyy5AxyNprDp7iZIqEyD2h"
-            : "price_456",
+            ? "price_1QfpkbHOjKJMIr06iiuRPpuG"
+            : "price_1QfpoPHOjKJMIr066vNBv5DA",
         //  REQUIRED - Name of the plan, displayed on the pricing page
-        name: "Starter",
+        name: "Explorer Starter",
         // A friendly description of the plan, displayed on the pricing page. Tip: explain why this plan and not others
-        description: "Perfect for small projects",
+        description: "Begin your pet's journey with magical transformations.",
         // The price you want to display, the one user will be charged on Stripe.
-        price: 79,
+        price: 10,
         // If you have an anchor price (i.e. $29) that you want to display crossed out, put it here. Otherwise, leave it empty
-        priceAnchor: 99,
+        priceAnchor: 20,
         features: [
-          {
-            name: "NextJS boilerplate",
-          },
-          { name: "User oauth" },
-          { name: "Database" },
-          { name: "Emails" },
+          { name: "5 AI Image Transformations" },
+          { name: "4 Adventure Backgrounds" },
+          { name: "HD Quality Downloads" },
+          { name: "Basic Photo Editing Tools" },
+          { name: "24h Support via Email" },
         ],
       },
       {
@@ -45,21 +44,19 @@ const config = {
         isFeatured: true,
         priceId:
           process.env.NODE_ENV === "development"
-            ? "price_1O5KtcAxyNprDp7iftKnrrpw"
-            : "price_456",
-        name: "Advanced",
-        description: "You need more power",
-        price: 99,
-        priceAnchor: 149,
+            ? "price_1QfplwHOjKJMIr06r5Cbc9b0"
+            : "price_1QfpoPHOjKJMIr066vNBv5DA",
+        name: "Adventurer Pro",
+        description: "Unlock more epic adventures and destinations for your pet.",
+        price: 15,
+        priceAnchor: 30,
         features: [
-          {
-            name: "NextJS boilerplate",
-          },
-          { name: "User oauth" },
-          { name: "Database" },
-          { name: "Emails" },
-          { name: "1 year of updates" },
-          { name: "24/7 support" },
+          { name: "15 AI Image Transformations" },
+          { name: "All Adventure Backgrounds" },
+          { name: "4K Ultra HD Downloads" },
+          { name: "Advanced Photo Editing Tools" },
+          { name: "Priority 24/7 Support" },
+          { name: "Exclusive Monthly Backgrounds" },
         ],
       },
     ],
